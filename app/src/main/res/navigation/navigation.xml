@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/title_screen">
+
+    <fragment
+        android:id="@+id/title_screen"
+        android:name="com.android.sample.game.TitleScreen"
+        android:label="fragment_title_screen"
+        tools:layout="@layout/fragment_title_screen">
+        <action
+            android:id="@+id/action_title_screen_to_register"
+            app:destination="@id/register"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/register"
+        android:name="com.android.sample.game.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+
+    </fragment>
+
+</navigation>

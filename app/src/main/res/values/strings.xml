@@ -1,0 +1,7 @@
+<resources>
+    <string name="easy_park">EasyPark</string>
+    <string name="play">Play</string>
+    <string name="question_1">Enter a text.</string>
+    <string name="text">Text</string>
+    <string name="register">Register</string>
+</resources>
