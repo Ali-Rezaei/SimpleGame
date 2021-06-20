@@ -28,7 +28,7 @@ class Register : DaggerFragment() {
             if (userText.text.isEmpty()) {
                 userTextLayout.error = getString(R.string.question_1)
             } else {
-                val destination = RegisterDirections.actionRegisterToInGame(userText.text.toString())
+                val destination = RegisterDirections.actionRegisterToInGame(userText.text.trim().toString())
                 with(findNavController()) {
                     currentDestination?.getAction(destination.actionId)?.let { navigate(destination) }
                 }

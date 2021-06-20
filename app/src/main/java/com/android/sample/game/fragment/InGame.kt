@@ -6,12 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.android.sample.game.BR
+import com.android.sample.game.R
 import com.android.sample.game.adapter.GifAdapter
 import com.android.sample.game.databinding.FragmentInGameBinding
 import com.android.sample.game.viewmodel.InGameViewModel
 import dagger.android.support.DaggerFragment
+import org.apache.commons.lang3.StringUtils
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 class InGame : DaggerFragment() {
 
@@ -31,13 +36,32 @@ class InGame : DaggerFragment() {
             lifecycleOwner = viewLifecycleOwner
         }
 
+        val args: InGameArgs by navArgs()
+
         with(binding) {
             recyclerView.apply {
                 adapter = GifAdapter()
                 setHasFixedSize(true)
             }
+            registerBtn.setOnClickListener {
+                if (userGuess.text.isEmpty()) {
+                    userGuessLayout.error = getString(R.string.guess_error)
+                } else {
+                    val score = (StringUtils.getJaroWinklerDistance(args.query, userGuess.text.trim()) * 100).roundToInt()
+                    if (score >= FIFTY_PERCENT) {
+                        Navigation.findNavController(root)
+                            .navigate(R.id.action_in_game_to_resultsWinner)
+                    } else {
+                        Navigation.findNavController(root)
+                            .navigate(R.id.action_in_game_to_gameOver)
+                    }
+                }
+            }
         }
-
         return binding.root
+    }
+
+    companion object {
+        private const val FIFTY_PERCENT = 50
     }
 }

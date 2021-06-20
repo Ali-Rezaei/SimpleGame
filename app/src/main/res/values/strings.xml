@@ -5,5 +5,10 @@
     <string name="question_2">What is your guess?</string>
     <string name="text_hint">Text</string>
     <string name="guess_hint">Guess</string>
+    <string name="guess_error">Enter a guess.</string>
     <string name="register">Register</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="next_match">Next Match</string>
+    <string name="game_over">Game Over</string>
+    <string name="try_again">Try Again?</string>
 </resources>

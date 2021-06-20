@@ -37,9 +37,45 @@
         android:name="com.android.sample.game.fragment.InGame"
         android:label="fragment_in_game"
         tools:layout="@layout/fragment_in_game">
+        <action
+            android:id="@+id/action_in_game_to_resultsWinner"
+            app:destination="@id/results_winner"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/title_screen"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_in_game_to_gameOver"
+            app:destination="@id/game_over"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/title_screen"
+            app:popUpToInclusive="false" />
         <argument
             android:name="query"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/results_winner"
+        android:name="com.android.sample.game.fragment.ResultsWinner"
+        tools:layout="@layout/fragment_results_winner">
+        <action
+            android:id="@+id/action_results_winner_to_match"
+            app:popUpTo="@id/title_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/game_over"
+        android:name="com.android.sample.game.fragment.GameOver"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over">
+        <action
+            android:id="@+id/action_game_over_to_match"
+            app:popUpTo="@id/title_screen" />
     </fragment>
 
 </navigation>
