@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/title_screen"
-        android:name="com.android.sample.game.TitleScreen"
+        android:name="com.android.sample.game.fragment.TitleScreen"
         android:label="fragment_title_screen"
         tools:layout="@layout/fragment_title_screen">
         <action
@@ -20,10 +20,26 @@
 
     <fragment
         android:id="@+id/register"
-        android:name="com.android.sample.game.Register"
+        android:name="com.android.sample.game.fragment.Register"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_in_game"
+            app:destination="@id/in_game"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/in_game"
+        android:name="com.android.sample.game.fragment.InGame"
+        android:label="fragment_in_game"
+        tools:layout="@layout/fragment_in_game">
+        <argument
+            android:name="text"
+            app:argType="string" />
     </fragment>
 
 </navigation>

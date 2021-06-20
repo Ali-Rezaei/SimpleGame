@@ -2,6 +2,8 @@
     <string name="easy_park">EasyPark</string>
     <string name="play">Play</string>
     <string name="question_1">Enter a text.</string>
-    <string name="text">Text</string>
+    <string name="question_2">What is your guess?</string>
+    <string name="text_hint">Text</string>
+    <string name="guess_hint">Guess</string>
     <string name="register">Register</string>
 </resources>

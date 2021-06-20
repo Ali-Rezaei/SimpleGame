@@ -1,4 +1,4 @@
-package com.android.sample.game
+package com.android.sample.game.fragment
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,14 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.android.sample.game.R
 import com.google.android.material.textfield.TextInputLayout
+import dagger.android.support.DaggerFragment
 
-
-/**
- * Shows a question and four answers.
- */
-class Register : Fragment() {
+class Register : DaggerFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +27,11 @@ class Register : Fragment() {
         view.findViewById<Button>(R.id.register_btn).setOnClickListener {
             if (userText.text.isEmpty()) {
                 userTextLayout.error = getString(R.string.question_1)
+            } else {
+                val destination = RegisterDirections.actionRegisterToInGame(userText.text.toString())
+                with(findNavController()) {
+                    currentDestination?.getAction(destination.actionId)?.let { navigate(destination) }
+                }
             }
         }
 

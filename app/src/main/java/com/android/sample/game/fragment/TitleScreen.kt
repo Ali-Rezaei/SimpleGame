@@ -1,17 +1,18 @@
-package com.android.sample.game
+package com.android.sample.game.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.android.sample.game.R
+import dagger.android.support.DaggerFragment
 
 /**
  * Shows the main title screen.
  */
-class TitleScreen : Fragment() {
+class TitleScreen : DaggerFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
