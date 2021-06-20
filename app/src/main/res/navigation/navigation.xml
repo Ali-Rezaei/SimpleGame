@@ -38,7 +38,7 @@
         android:label="fragment_in_game"
         tools:layout="@layout/fragment_in_game">
         <argument
-            android:name="text"
+            android:name="query"
             app:argType="string" />
     </fragment>
 

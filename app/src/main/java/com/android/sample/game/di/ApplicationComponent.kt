@@ -17,10 +17,10 @@ import javax.inject.Singleton
     modules = [
         NetworkModule::class,
         AndroidSupportInjectionModule::class,
+        ActivityBindingModule::class,
         UtilsModule::class,
         TitleScreenModule::class,
-        RegisterModule::class,
-        InGameModule::class]
+        RegisterModule::class]
 )
 interface ApplicationComponent : AndroidInjector<GameApplication> {
 

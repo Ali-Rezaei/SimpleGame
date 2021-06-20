@@ -54,7 +54,7 @@ class GifAdapter : ListAdapter<DataResponse, GifAdapter.MainViewHolder>(DiffCall
      */
     companion object DiffCallback : DiffUtil.ItemCallback<DataResponse>() {
         override fun areItemsTheSame(oldItem: DataResponse, newItem: DataResponse): Boolean {
-            return oldItem.gifUrl == newItem.gifUrl
+            return oldItem.images.original.gifUrl == newItem.images.original.gifUrl
         }
 
         override fun areContentsTheSame(oldItem: DataResponse, newItem: DataResponse): Boolean {

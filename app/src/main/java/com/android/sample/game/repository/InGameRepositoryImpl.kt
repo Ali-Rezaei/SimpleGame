@@ -1,6 +1,7 @@
 package com.android.sample.game.repository
 
 import com.android.sample.game.model.DataResponse
+import com.android.sample.game.model.WrapperResponse
 import com.android.sample.game.network.GameService
 import io.reactivex.Single
 import javax.inject.Inject
@@ -11,6 +12,5 @@ class InGameRepositoryImpl @Inject constructor(
     private val service: GameService,
 ) : InGameRepository {
 
-    override fun getGifs(): Single<List<DataResponse>> =
-        service.getGifs().map { it.wrapper }
+    override fun getGifs(query: String): Single<WrapperResponse> = service.getGifs(query)
 }

@@ -1,9 +1,12 @@
 package com.android.sample.game.viewmodel
 
-import com.android.sample.game.model.DataResponse
+import com.android.sample.game.model.WrapperResponse
 import com.android.sample.game.usecase.GetGifsUseCase
 import com.android.sample.game.util.scheduler.BaseSchedulerProvider
+import javax.inject.Inject
 
-class InGameViewModel(schedulerProvider: BaseSchedulerProvider,
-                      getGifsUseCase: GetGifsUseCase)
-    : BaseViewModel<List<DataResponse>>(schedulerProvider, getGifsUseCase())
+class InGameViewModel @Inject constructor(
+    schedulerProvider: BaseSchedulerProvider,
+    getGifsUseCase: GetGifsUseCase,
+    query: String
+) : BaseViewModel<WrapperResponse>(schedulerProvider, getGifsUseCase(query))
