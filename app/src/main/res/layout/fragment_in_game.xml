@@ -20,7 +20,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="225dp"
+            android:layout_height="240dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -33,12 +33,39 @@
                 android:layout_gravity="center_vertical"
                 app:showLoading="@{vm.liveData}" />
 
+            <LinearLayout
+                android:id="@+id/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:showError="@{vm.liveData}">
+
+                <TextView
+                    android:id="@+id/error_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/error_msg"
+                    android:textColor="@android:color/background_dark" />
+
+                <Button
+                    android:id="@+id/retry_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->vm.sendRequest()}"
+                    android:text="@string/retry" />
+
+            </LinearLayout>
+
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="225dp"
+            android:layout_height="240dp"
             android:orientation="horizontal"
             android:scaleType="centerCrop"
             app:items="@{vm.liveData}"

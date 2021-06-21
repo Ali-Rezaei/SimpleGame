@@ -21,11 +21,19 @@ fun bindImage(imageView: ImageView, gifUrl: String) {
 @BindingAdapter("items")
 fun submitList(recyclerView: RecyclerView, resource: Resource<WrapperResponse>?) {
     if (resource is Resource.Success) {
+        recyclerView.visibility = View.VISIBLE
         (recyclerView.adapter as GifAdapter).submitList(resource.data?.wrapper)
+    } else {
+        recyclerView.visibility = View.INVISIBLE
     }
 }
 
 @BindingAdapter("showLoading")
 fun <T> View.showLoading(resource: Resource<T>?) {
     visibility = if (resource is Resource.Loading) View.VISIBLE else View.GONE
+}
+
+@BindingAdapter("showError")
+fun <T> View.showError(resource: Resource<T>?) {
+    visibility = if (resource is Resource.Error) View.VISIBLE else View.GONE
 }

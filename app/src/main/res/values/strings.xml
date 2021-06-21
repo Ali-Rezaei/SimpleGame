@@ -11,4 +11,6 @@
     <string name="next_match">Next Match</string>
     <string name="game_over">Game Over</string>
     <string name="try_again">Try Again?</string>
+    <string name="retry">Retry</string>
+    <string name="error_msg">Something went wrong</string>
 </resources>
