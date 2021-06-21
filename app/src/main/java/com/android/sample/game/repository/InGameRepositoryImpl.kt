@@ -1,6 +1,5 @@
 package com.android.sample.game.repository
 
-import com.android.sample.game.model.DataResponse
 import com.android.sample.game.model.WrapperResponse
 import com.android.sample.game.network.GameService
 import io.reactivex.Single
