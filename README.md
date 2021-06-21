@@ -1,4 +1,4 @@
-# SimpleGame
+# SimpleGame-Navigation
 A sample to showcase Kotlin, Navigation, Dagger, RxJava, Retrofit, DataBinding, Espresso and Unit test.
 
 ## Features
