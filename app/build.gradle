@@ -17,7 +17,7 @@ android {
         versionName "1.0"
         buildConfigField "String", "GIPHY_BASE_URL", "\"https://api.giphy.com/\""
         buildConfigField "String", "GIPHY_API_KEY", "\"${getProperty("local.properties", "giphy_api_key")}\""
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.android.sample.game.AppTestRunner"
     }
 
     buildTypes {
@@ -73,6 +73,7 @@ dependencies {
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.11.0'
 }
 
 def getProperty(String filename, String propName) {
