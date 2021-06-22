@@ -76,7 +76,7 @@ class MainActivityTest {
     }
 
     @Test
-    fun shouldBeAbleToReLaunchTitleSreenAfterWinning() {
+    fun shouldBeAbleToReLaunchTitleScreenAfterWinning() {
         onView(withId(R.id.play_btn)).perform(click())
         onView(isAssignableFrom(EditText::class.java))
             .perform(typeText("a"), pressImeActionButton())
