@@ -9,7 +9,6 @@
     tools:context=".fragment.ResultsWinner"
     tools:layout_editor_absoluteY="81dp">
 
-
     <TextView
         android:id="@+id/game_title"
         android:gravity="center_horizontal"

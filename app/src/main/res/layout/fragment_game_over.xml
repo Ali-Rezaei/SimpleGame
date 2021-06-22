@@ -9,7 +9,6 @@
     tools:context=".fragment.GameOver"
     tools:layout_editor_absoluteY="81dp">
 
-
     <TextView
         android:id="@+id/game_title"
         android:gravity="center_horizontal"
@@ -38,7 +37,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/lose_button"
+        android:background="@drawable/game_over_button"
         android:text="@string/try_again"
         android:textColor="#FFE2DF"
         android:textSize="18sp"
