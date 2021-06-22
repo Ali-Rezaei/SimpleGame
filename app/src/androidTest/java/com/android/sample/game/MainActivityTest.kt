@@ -51,6 +51,16 @@ class MainActivityTest {
     }
 
     @Test
+    fun shouldBeAbleToDisplayEditTextErrorMessageInGameScreen() {
+        onView(withId(R.id.play_btn)).perform(click())
+        onView(isAssignableFrom(EditText::class.java))
+            .perform(typeText("a"), pressImeActionButton())
+        onView(withId(R.id.register_btn)).perform(click())
+        onView(withId(R.id.register_btn)).perform(click())
+        onView(withText(R.string.guess_error)).check(matches(isDisplayed()))
+    }
+
+    @Test
     fun shouldBeAbleToLaunchWinnerScreen() {
         onView(withId(R.id.play_btn)).perform(click())
         onView(isAssignableFrom(EditText::class.java))
