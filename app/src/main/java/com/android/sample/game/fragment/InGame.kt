@@ -50,7 +50,7 @@ class InGame : DaggerFragment() {
                     userGuessLayout.error = getString(R.string.guess_error)
                 } else {
                     val score = (StringUtils.getJaroWinklerDistance(args.query, userGuess.text.trim()) * 100).roundToInt()
-                    if (score >= FIFTY_SCORE) {
+                    if (score >= WINNING_SCORE) {
                         Navigation.findNavController(root)
                             .navigate(R.id.action_in_game_to_resultsWinner)
                     } else {
@@ -71,6 +71,6 @@ class InGame : DaggerFragment() {
     }
 
     companion object {
-        private const val FIFTY_SCORE = 50
+        private const val WINNING_SCORE = 80
     }
 }
