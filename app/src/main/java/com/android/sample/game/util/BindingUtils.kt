@@ -20,7 +20,6 @@ fun bindImage(imageView: ImageView, gifUrl: String) {
     Glide.with(imageView.context)
         .load(gifUrl)
         .placeholder(circularProgressDrawable)
-        .error(R.drawable.ic_error)
         .into(imageView)
 }
 
