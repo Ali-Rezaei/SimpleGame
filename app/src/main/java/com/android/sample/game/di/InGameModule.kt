@@ -34,7 +34,7 @@ abstract class InGameModule {
 
         @Provides
         @JvmStatic
-        internal fun provideSavingsGoal(activity: MainActivity): String {
+        internal fun provideQuery(activity: MainActivity): String {
             val navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
             val fragment = navHostFragment!!.childFragmentManager.fragments?.get(0)
             val args: InGameArgs by fragment.navArgs()
