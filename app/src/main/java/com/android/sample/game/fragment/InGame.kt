@@ -6,8 +6,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.android.sample.game.BR
@@ -15,17 +13,12 @@ import com.android.sample.game.R
 import com.android.sample.game.adapter.GifAdapter
 import com.android.sample.game.databinding.FragmentInGameBinding
 import com.android.sample.game.viewmodel.InGameViewModel
-import dagger.android.support.DaggerFragment
 import org.apache.commons.lang3.StringUtils
-import javax.inject.Inject
 import kotlin.math.roundToInt
 
-class InGame : DaggerFragment() {
+class InGame : BaseFragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private val viewModel by viewModels<InGameViewModel> { viewModelFactory }
+    private val viewModel: InGameViewModel by bindViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
