@@ -1,4 +1,4 @@
-package com.android.sample.game.viewmodel
+package com.android.sample.game.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,6 +21,10 @@ open class BaseViewModel<T>(
         get() = _liveData
 
     fun sendRequest() {
+        sendRequest(requestSingle)
+    }
+
+    protected fun sendRequest(requestSingle: Single<T>) {
         _liveData.value = Resource.Loading
         requestSingle.subscribeOn(schedulerProvider.io())
             .observeOn(schedulerProvider.ui()).subscribe({

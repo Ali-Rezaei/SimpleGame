@@ -1,4 +1,4 @@
-package com.android.sample.game.fragment
+package com.android.sample.game.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.android.sample.game.BR
 import com.android.sample.game.R
 import com.android.sample.game.adapter.GifAdapter
+import com.android.sample.game.base.BaseFragment
 import com.android.sample.game.databinding.FragmentInGameBinding
 import com.android.sample.game.viewmodel.InGameViewModel
 import org.apache.commons.lang3.StringUtils
