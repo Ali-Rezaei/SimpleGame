@@ -10,9 +10,4 @@ class InGameViewModel @Inject constructor(
     schedulerProvider: BaseSchedulerProvider,
     getGifsUseCase: GetGifsUseCase,
     query: String
-) : BaseViewModel<WrapperResponse>(schedulerProvider, getGifsUseCase(query)) {
-
-    init {
-        sendRequest(getGifsUseCase(query))
-    }
-}
+) : BaseViewModel<WrapperResponse>(schedulerProvider, getGifsUseCase(query))
